@@ -28,3 +28,34 @@ https://www.projectpro.io/article/web-scraping-projects-ideas/475
     - if you still not able to do it comment below and I will help you 
 10. Open Chrome : driver = webdriver.Chrome()
 11. got to 'https://www.expedia.com/' 
+
+
+
+# Part 2: Setting Up the Enviornment
+
+1. Define to files 
+    - main.py
+    - TicketPrice.py
+2. Import TicketPrice.py to main.py
+3. Import webdriver to TicketPrice.py
+4. Define the Class TicketPrice(webdriver.Chrome)
+5. Define def __init__(self, driver_path = r"/usr/local/bin", exit = False):
+    	self.driver_path = driver_path
+		self.exit = exit 
+		super(FlightTicket, self).__init__()   #accsess to all the wedriver.Chrome methods
+		self.implicitly_wait(15)
+		self.maximize_window()
+6. 	def __exit__(self, exc_type, exc_val, exc_tb):
+        
+            if self.exit:
+                self.quit()
+
+7. 	def get_first_page(self): 
+		
+        
+          self.get(URL)
+          
+8. with FlightTicket() as bot:
+	
+        bot.get_first_page()
+
